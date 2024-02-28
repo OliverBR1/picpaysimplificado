@@ -54,13 +54,13 @@ GET /api/users - Receber todas os  usuários
 **BODY**
 ```json
 {
-		"firstname": "Bruno",
-		"lastname": "Oliveira",
-		"document": "12345679",
-	  "password": "1234567",
-		"email":"teste@gmail.com",
-		"balance": 10,
-		"userType": "COMMON"
+  "firstname": "Bruno",
+  "lastname": "Oliveira",
+  "document": "12345679",
+  "password": "1234567",
+  "email":"teste@gmail.com",
+  "balance": 10,
+  "userType": "COMMON"
 }
 ```
 
@@ -74,7 +74,7 @@ POST /api/transacitions - Criar uma nova transação
 **BODY**
 ```json
 {
-	"senderId": 1,
-	"receiverId": 2,
-	"value": 10
+  "senderId": 1,
+  "receiverId": 2,
+  "value": 10
 }
