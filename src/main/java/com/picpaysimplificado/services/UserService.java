@@ -11,14 +11,13 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class UserService  {
-
+public class UserService {
     @Autowired
     private UserRepository repository;
 
     public void validateTransaction(User sender, BigDecimal amount) throws Exception {
         if(sender.getUserType() == UserType.MERCHANT){
-            throw new Exception("Usuario do tipo lojista não está autorizado a realizar transação");
+            throw new Exception("Usuário do tipo Lojista não está autorizado a realizar transação");
         }
 
         if(sender.getBalance().compareTo(amount) < 0){
@@ -26,8 +25,8 @@ public class UserService  {
         }
     }
 
-    public User findUserById(Long id) throws Exception{
-        return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuário não encotrado"));
+    public User findUserById(Long id) throws Exception {
+        return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
     }
 
     public User createUser(UserDTO data){
@@ -36,7 +35,7 @@ public class UserService  {
         return newUser;
     }
 
-    public List<User> getAllUser(){
+    public List<User> getAllUsers(){
         return this.repository.findAll();
     }
 
